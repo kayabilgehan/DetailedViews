@@ -1,15 +1,22 @@
-//
-//  NavigationFirstView.swift
-//  DetailedViews
-//
-//  Created by Bilgehan KAYA on 3.06.2021.
-//
-
 import SwiftUI
 
 struct NavigationFirstView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView{
+            VStack{
+                MyImageView(image: Image("darth_vader1"))
+                Button(action: {
+                    //Button action code
+                    print("log")
+                }){
+                    Text("Button")
+                }.padding()
+                NavigationLink(
+                    destination: NavigationSecondView()){
+                    /*@START_MENU_TOKEN@*/Text("Navigate")/*@END_MENU_TOKEN@*/
+                }.padding()
+            }.navigationBarTitle(Text("First View"))
+        }
     }
 }
 

@@ -1,20 +1,22 @@
-//
-//  MyImageView.swift
-//  DetailedViews
-//
-//  Created by Bilgehan KAYA on 3.06.2021.
-//
-
 import SwiftUI
 
 struct MyImageView: View {
+    
+    var image: Image
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        image
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .frame(width: UIScreen.main.bounds.width * 0.9, height: UIScreen.main.bounds.height * 0.25)
+            .clipShape(Circle())
+            .overlay(Circle().stroke(Color.white, lineWidth: 5)).shadow(radius: 10)
+            .padding()
     }
 }
 
 struct MyImageView_Previews: PreviewProvider {
     static var previews: some View {
-        MyImageView()
+        MyImageView(image: Image("darth_vader1"))
     }
 }

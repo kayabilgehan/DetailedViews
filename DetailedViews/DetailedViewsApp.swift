@@ -11,7 +11,8 @@ import SwiftUI
 struct DetailedViewsApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            //ContentView()
+            NavigationFirstView()
         }
     }
 }
